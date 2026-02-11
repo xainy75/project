@@ -217,7 +217,9 @@ function showSuccessMessage(message) {
     setTimeout(() => {
         successDiv.style.animation = 'slideOut 0.3s ease-out';
         setTimeout(() => {
-            document.body.removeChild(successDiv);
+            if (successDiv.parentNode) {
+                document.body.removeChild(successDiv);
+            }
         }, 300);
     }, 3000);
 }
